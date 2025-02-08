@@ -1,0 +1,281 @@
+﻿<controls:ProWindow x:Class="ArcGisPlannerToolbox.WPF.Views.MediaDigitizerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:customBehaviors="clr-namespace:ArcGisPlannerToolbox.WPF.Behaviors"
+        mc:Ignorable="d"
+        Title="Medien digitalisieren/abbilden" Height="900" Width="800"
+        MinWidth="800" WindowStartupLocation="CenterScreen"
+        ShowMinButton="True"
+        ShowInTaskbar="True">
+    <controls:ProWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!-- Modified sort arrow templates -->
+            <DataTemplate x:Key="HeaderTemplateArrowUp">
+                <DockPanel LastChildFill="True">
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Column.Header}" />
+                    <Path VerticalAlignment="Center" 
+                          Margin="5,0,0,0" 
+                          Fill="Black"
+                          Data="M 0,0 L 5,5 L 10,0 Z"/>
+                </DockPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="HeaderTemplateArrowDown">
+                <DockPanel LastChildFill="True">
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Column.Header}" />
+                    <Path VerticalAlignment="Center" 
+                          Margin="5,0,0,0" 
+                          Fill="Black"
+                          Data="M 0,5 L 5,0 L 10,5 Z"/>
+                </DockPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </controls:ProWindow.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnWindowLoaded" />
+        </behaviors:EventTrigger>
+        <behaviors:EventTrigger EventName="Closed">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnWindowClosed" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <behaviors:Interaction.Behaviors>
+        <customBehaviors:WindowCursorUpdateBehavior />
+    </behaviors:Interaction.Behaviors>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="10 5">
+            <GroupBox Header="Medium" Padding="10 0" Style="{StaticResource GroupBoxWithoutHeader}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Medium in Bearbeitung:" />
+                    <TextBlock Grid.Column="1" Text="{Binding SelectedMedia}" Margin="10 0" />
+                    <Button Grid.Column="2" Content="BBEs aktualisieren" Margin="0 5" HorizontalAlignment="Right" Command="{Binding OpenUpdateTourCommand}" />
+
+                    <!--<TextBlock Grid.Row="1" Text="Granularität (kleinste BBE) des Mediums:" />
+                    <ComboBox Grid.Row="1" Grid.Column="1" Margin="10 0" ItemsSource="{Binding OccupancyUnitList}" SelectedItem="{Binding SelectedOccupancyUnit}" />
+                    <Button Grid.Row="1" Grid.Column="2" Content="BBEs aktualisieren" Margin="0 5" HorizontalAlignment="Right" />-->
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Header="Touren und Gebiete" Margin="0 0 0 5" Padding="10"
+                      Style="{StaticResource GroupBoxWithoutHeader}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <CheckBox IsChecked="{Binding OnlyUnDigitize}" Content="Ergebnisliste auf noch nicht digitalisierte Touren eingrenzen">
+                        <behaviors:Interaction.Triggers>
+                            <behaviors:EventTrigger EventName="Checked">
+                                <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnOnlyUndigitizeChecked" />
+                            </behaviors:EventTrigger>
+                            <behaviors:EventTrigger EventName="Unchecked">
+                                <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnOnlyUndigitizeChecked" />
+                            </behaviors:EventTrigger>
+                        </behaviors:Interaction.Triggers>
+                    </CheckBox>
+                    <CheckBox IsChecked="{Binding ShowSystemDigitize}" IsEnabled="{Binding ShowSystemDigitizeEnable}" Grid.Column="1" Content="Systemseitig digitalisierte Touren weiter anzeigen.">
+                        <behaviors:Interaction.Triggers>
+                            <behaviors:EventTrigger EventName="Checked">
+                                <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnShowSystemDigitizeChecked" />
+                            </behaviors:EventTrigger>
+                            <behaviors:EventTrigger EventName="Unchecked">
+                                <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnShowSystemDigitizeChecked" />
+                            </behaviors:EventTrigger>
+                        </behaviors:Interaction.Triggers>
+                    </CheckBox>
+                    <CheckBox Grid.Row="1" IsChecked="{Binding FromMapView}" Margin="0 5 0 10" Content="Ergebnisliste der Touren auf Kartenausschnitt eingrenzen" />
+                    <TextBlock Grid.Row="2" Margin="0" Text="BBE-/Tourenliste" />
+                    <Grid Grid.Row="2" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Tour suchen" />
+                        <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}">
+                            <behaviors:Interaction.Triggers>
+                                <behaviors:EventTrigger EventName="TextChanged">
+                                    <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnSearchTextChanged" />
+                                </behaviors:EventTrigger>
+                            </behaviors:Interaction.Triggers>
+                        </TextBox>
+                    </Grid>
+                    <ListView x:Name="FilteredToursListView"
+                              Grid.Row="3" 
+                              Grid.ColumnSpan="2" 
+                              Height="150" 
+                              Margin="0 5"
+                              ItemContainerStyle="{StaticResource MaterialDesignCompactGridViewItem}"
+                              ItemsSource="{Binding FilteredTours}"
+                              SelectedItem="{Binding SelectedFilteredTour}">
+                        <behaviors:Interaction.Behaviors>
+                            <customBehaviors:ListViewSortBehavior />
+                        </behaviors:Interaction.Behaviors>
+                        <behaviors:Interaction.Triggers>
+                            <behaviors:EventTrigger EventName="SelectionChanged">
+                                <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnFilteredTourSelectionChanged" />
+                            </behaviors:EventTrigger>
+                        </behaviors:Interaction.Triggers>
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                                <GridView.Columns>
+                                    <GridViewColumn Width="auto" Header="BBE-ID" DisplayMemberBinding="{Binding OccupancyUnitId}" />
+                                    <GridViewColumn Width="auto" Header="MID" DisplayMemberBinding="{Binding MediaId}" />
+                                    <GridViewColumn Width="auto">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="Issue">Ausgabe</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                        <GridViewColumn.DisplayMemberBinding>
+                                            <Binding Path="Issue" />
+                                        </GridViewColumn.DisplayMemberBinding>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="150">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="TourName">Tour</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                        <GridViewColumn.DisplayMemberBinding>
+                                            <Binding Path="TourName" />
+                                        </GridViewColumn.DisplayMemberBinding>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="auto">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="TourId">Tour-Id</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                        <GridViewColumn.DisplayMemberBinding>
+                                            <Binding Path="TourId" />
+                                        </GridViewColumn.DisplayMemberBinding>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="auto" Header="Tour-Nr" DisplayMemberBinding="{Binding TourNumber}" />
+                                    <GridViewColumn Width="auto" Header="Auflage" DisplayMemberBinding="{Binding PrintNumber}" />
+                                    <GridViewColumn Width="250" Header="Digitalisiert von" DisplayMemberBinding="{Binding Author}" />
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Right">
+                        <Run Text="Anzahl Touren: "  />
+                        <Run Text="{Binding ToursCount}" />
+                    </TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
+                        <Run Text="Bereits digitalisiert: "/>
+                        <Run Text="{Binding AlreadyDigitizedCount}" />
+                    </TextBlock>
+                    <TextBlock Grid.Row="5" Text="Gebietslisten der gewählten BBE/Tour" Margin="0 5 0 0" />
+                    <ListView Grid.Row="6" Grid.ColumnSpan="2" Margin="0 5 0 10" Height="150"
+                              SelectionMode="Multiple"
+                              ItemContainerStyle="{StaticResource MaterialDesignCompactGridViewItem}"
+                              ItemsSource="{Binding Areas}">
+                        <behaviors:Interaction.Behaviors>
+                            <customBehaviors:ListViewMultiSelection TargetObject="{Binding}" MethodName="OnAreaSelectionChanged" />
+                        </behaviors:Interaction.Behaviors>
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                                <GridView.Columns>
+                                    <GridViewColumn Header="MID" DisplayMemberBinding="{Binding MediaId}" />
+                                    <GridViewColumn Header="Ausgabe" DisplayMemberBinding="{Binding Issue}" />
+                                    <GridViewColumn Header="Tour" DisplayMemberBinding="{Binding TourName}" />
+                                    <GridViewColumn Header="Tour-Id" DisplayMemberBinding="{Binding TourId}" />
+                                    <GridViewColumn Header="Tour-Nr" DisplayMemberBinding="{Binding TourNumber}" />
+                                    <GridViewColumn Header="PLZ" DisplayMemberBinding="{Binding ZipCode}" />
+                                    <GridViewColumn Header="Ort" DisplayMemberBinding="{Binding Location}" />
+                                    <GridViewColumn Header="Ortsteil" DisplayMemberBinding="{Binding District}" />
+                                    <GridViewColumn Header="Auflage" DisplayMemberBinding="{Binding PrintNumber}" />
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <WrapPanel Grid.Row="7">
+                        <Button Content="Gebiet digitalisieren" Command="{Binding OpenAreaDigitizerWindowCommand}" />
+                        <Button Content="Tour splitten" Margin="10 0" Command="{Binding OpenTourSplitterWindowCommand}" />
+                    </WrapPanel>
+                    <TextBlock Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center">
+                        <Run Text="Summe der Auflage: " />
+                        <Run Text="{Binding PrintNumber, UpdateSourceTrigger=PropertyChanged}" />
+                    </TextBlock>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="2" Header="mPLZ der ausgewählten BBE/Tour" Style="{StaticResource GroupBoxWithoutHeader}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <ListView Height="150" Margin="10 5" 
+                              ItemContainerStyle="{StaticResource MaterialDesignCompactGridViewItem}"
+                              ItemsSource="{Binding DigitizeUnits}"
+                              SelectedItem="{Binding SelectedDigitizeUnit}">
+                        <behaviors:Interaction.Behaviors>
+                            <customBehaviors:ListViewUpdateBehavior ItemsSource="{Binding DigitizeUnits}" />
+                        </behaviors:Interaction.Behaviors>
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                                <GridView.Columns>
+                                    <GridViewColumn Header="PLZ" DisplayMemberBinding="{Binding ZipCode}" />
+                                    <GridViewColumn Header="mPLZ" DisplayMemberBinding="{Binding MicroZipCode}" />
+                                    <GridViewColumn Header="PLZ-Name" DisplayMemberBinding="{Binding ZipCodeName}" />
+                                    <GridViewColumn Header="Ortsteile" DisplayMemberBinding="{Binding Districts}" />
+                                    <GridViewColumn Header="Ortsteil-Anteile-HH" DisplayMemberBinding="{Binding DistrictHousholdsProportion}" />
+                                    <GridViewColumn Header="WV-Quote [%]" DisplayMemberBinding="{Binding AdvertisingObjectorsQuote}" />
+                                    <GridViewColumn Header="HH-Brutto" DisplayMemberBinding="{Binding GrossHousehold}" />
+                                    <GridViewColumn Header="HH-Netto" DisplayMemberBinding="{Binding NetHouesehold}" />
+                                    <GridViewColumn Header="EW" DisplayMemberBinding="{Binding Residents}" />
+                                    <GridViewColumn Header="KGS8" DisplayMemberBinding="{Binding CommutityCode}" />
+                                    <GridViewColumn Header="KGS8-Name" DisplayMemberBinding="{Binding CommunityName}" />
+                                    <GridViewColumn Header="Datenstand" DisplayMemberBinding="{Binding LastModified}" />
+                                    <GridViewColumn Header="Grenzstand" DisplayMemberBinding="{Binding BorderStatus}" />
+                                    <GridViewColumn Header="Digitalisiert von" DisplayMemberBinding="{Binding Author}" />
+                                    <GridViewColumn Header="Geprüft von" DisplayMemberBinding="{Binding EvaluatedFrom}" />
+                                    <GridViewColumn Header="Geprüft am" DisplayMemberBinding="{Binding EvaluatedOn}" />
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <WrapPanel Grid.Row="1" Margin="0 5">
+                        <Button Content="mPLZ entfernen" Command="{Binding RemoveDigitizedUnitCommand}" />
+                        <Button Content="Ergebnisliste leeren" Margin="10 0" Command="{Binding ClearAllDigitizedUnitCommand}" />
+                        <Button Content="Tour geprüft" Command="{Binding EvaluateCommand}" />
+                        <Button Content="BBE/Tour speichern" Margin="10 0" Command="{Binding SaveButtonCommand}" />
+                    </WrapPanel>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Right">
+                 <Run Text="Summe HH-Brutto = " />
+                 <Run Text="{Binding GrossHousHoldSum}" />
+                 <LineBreak />
+                 <Run Text="Summe HH-Netto = " />
+                 <Run Text="{Binding NetHouseholdSum}" />
+                    </TextBlock>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="3" Header="Erweitertes Digitalisieren" IsEnabled="{Binding AdvancedGroupEnable}"
+                      Style="{StaticResource GroupBoxWithoutHeader}">
+                <Button Content="Erweitertes Digitalisieren" HorizontalAlignment="Center"
+                        IsEnabled="{Binding DigitizeMissingUnitsButton}" />
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</controls:ProWindow>

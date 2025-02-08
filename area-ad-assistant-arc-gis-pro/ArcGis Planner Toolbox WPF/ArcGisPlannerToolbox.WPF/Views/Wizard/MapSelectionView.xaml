@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="ArcGisPlannerToolbox.WPF.Views.Wizard.MapSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:customBehaviors="clr-namespace:ArcGisPlannerToolbox.WPF.Behaviors"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </UserControl.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+        <Grid.Resources>
+            <CollectionViewSource x:Key="src" Source="{Binding GroupData}">
+                <CollectionViewSource.GroupDescriptions>
+                    <PropertyGroupDescription PropertyName="MediaName" />
+                </CollectionViewSource.GroupDescriptions>
+            </CollectionViewSource>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Ausgewählte BBEs" Margin="20 0" />
+        <ListView Grid.Row="1" Margin="20 10" SelectedItem="{Binding SelectedGroupData}" SelectionMode="Multiple"
+                  ItemsSource="{Binding Source={StaticResource src}}">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                    <GridViewColumn Header="Tour Nr">
+                        <GridViewColumn.CellTemplate>
+                            <ItemContainerTemplate>
+                                <materialDesign:PackIcon>
+                                    <materialDesign:PackIcon.Style>
+                                        <Style TargetType="materialDesign:PackIcon">
+                                            <Setter Property="Kind" Value="Flag" />
+                                            <Setter Property="Foreground" Value="Red" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding NumberOfCopiesInfo}" Value="1: PLZ genau">
+                                                    <Setter Property="Kind" Value="Tick" />
+                                                    <Setter Property="Foreground" Value="Black" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </materialDesign:PackIcon.Style>
+                                </materialDesign:PackIcon>
+                            </ItemContainerTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Tour" DisplayMemberBinding="{Binding TourName}" />
+                    <GridViewColumn Header="Auflage" DisplayMemberBinding="{Binding NumberOfCopies}" />
+                    <GridViewColumn Header="Auflage Info" DisplayMemberBinding="{Binding NumberOfCopiesInfo}" />
+                    <GridViewColumn Header="HH_Brutto" DisplayMemberBinding="{Binding GrossHouseHolds}" />
+                    <GridViewColumn Header="Erscheintage" DisplayMemberBinding="{Binding Appearance}" />
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Medium ID" DisplayMemberBinding="{Binding MediaId}" />
+                    <GridViewColumn Header="Medium" DisplayMemberBinding="{Binding MediaName}" />
+                    <GridViewColumn Header="BBE ID" DisplayMemberBinding="{Binding OccupancyUnitId}" />
+                    <GridViewColumn Header="Datenquelle" DisplayMemberBinding="{Binding DataSource}" />
+                    <GridViewColumn Header="Belegungseinheit" DisplayMemberBinding="{Binding OccupancyUnit}" />
+                    <GridViewColumn Header="Name Titel" DisplayMemberBinding="{Binding NameTitle}" />
+                    <GridViewColumn Header="Ausgabe Nr" DisplayMemberBinding="{Binding IssueNumber}" />
+                    <GridViewColumn Header="Ausgabe" DisplayMemberBinding="{Binding Issue}" />
+                    <GridViewColumn Header="Tour ID" DisplayMemberBinding="{Binding TourId}" />
+                    <GridViewColumn Header="Datenstand" DisplayMemberBinding="{Binding DataStatus}" />
+                    <GridViewColumn Header="Generiert Am" DisplayMemberBinding="{Binding CreationDate}" />
+                    <GridViewColumn Header="Anzahl Geometrien" DisplayMemberBinding="{Binding NumberOfGeometries}" />
+                    <GridViewColumn Header="Fehlerhafte Geometrien" DisplayMemberBinding="{Binding NumberOfFaultyGeometries}" />
+                    <GridViewColumn Header="Bereinigt Am" DisplayMemberBinding="{Binding CleaningDate}" />
+                </GridView>
+            </ListView.View>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="GroupItem" BasedOn="{StaticResource PlannerListViewGroupItem}" />
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ListView.GroupStyle>
+            <behaviors:Interaction.Behaviors>
+                <customBehaviors:ListViewMultiSelection TargetObject="{Binding}" MethodName="ListViewSelectionChanged" />
+            </behaviors:Interaction.Behaviors>
+        </ListView>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <CheckBox IsChecked="{Binding MindNeigbourBranches}" Content="Nachbarfilianlen beachten" HorizontalAlignment="Right" Margin="20 5" />
+            <WrapPanel HorizontalAlignment="Left" Margin="20 0">
+                <TextBlock Text="Zielauflage:" Margin="0 0 10 0" />
+                <TextBox Width="150" Text="{Binding TargetNumberOfCopies}">
+                    <behaviors:Interaction.Behaviors>
+                        <customBehaviors:TextBoxNumericInputBehavior />
+                    </behaviors:Interaction.Behaviors>
+                </TextBox>
+            </WrapPanel>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="20 10">
+                <TextBlock>
+                    <Run Text="Selektiert: " />
+                    <Run Text="{Binding SelectedNumberOfCopiesText}" />
+                </TextBlock>
+                <TextBlock>
+                    <Run Text="Differenz: " />
+                    <Run Text="{Binding EditionDifferenceText}" />
+                </TextBlock>
+            </StackPanel>
+            <WrapPanel HorizontalAlignment="Right" Margin="20 0" Grid.Row="1">
+                <Button Content="Tour deselektieren" Command="{Binding DeselectSelectedTourCommand}" />
+                <Button Content="Alle deselektieren" Command="{Binding DeselectAllToursCommand}" Margin="5 0" />
+                <Button Content="Systemvorschlag" Command="{Binding AutoPlannerCommand}" IsEnabled="{Binding IsAutoPlannerButtonEnable}" />
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="ArcGisPlannerToolbox.WPF.Views.Wizard.PreliminaryBranchAreasView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </UserControl.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button Content="Zur Planung freigeben" Command="{Binding ReleaseButtonCommand}" />
+        <DataGrid Grid.Row="1" Margin="0 10 5 10" AutoGenerateColumns="False" ItemsSource="{Binding PredefinedBranches}"
+                  SelectedItem="{Binding SelectedPredefinedBranch}">
+            <behaviors:Interaction.Triggers>
+                <behaviors:EventTrigger EventName="SelectionChanged">
+                    <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnPredefinedBranchChanged" />
+                </behaviors:EventTrigger>
+            </behaviors:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Filial Nr" />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Content="{Binding Filial_Nr}">
+                                <behaviors:Interaction.Triggers>
+                                    <behaviors:EventTrigger EventName="Checked">
+                                        <behaviors:InvokeCommandAction Command="{Binding Path=DataContext.FilialNrCheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                                       CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource AncestorType=CheckBox}}" />
+                                    </behaviors:EventTrigger>
+                                    <behaviors:EventTrigger EventName="Unchecked">
+                                        <behaviors:InvokeCommandAction Command="{Binding Path=DataContext.FilialNrUncheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                                       CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource AncestorType=CheckBox}}" />
+                                    </behaviors:EventTrigger>
+                                </behaviors:Interaction.Triggers>
+                            </CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Kundendaten Verfügbar" Binding="{Binding Kundendaten_verfügbar}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Auflage" Binding="{Binding Auflage}" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Row="1" Grid.Column="1" Margin="5 10 0 10" ItemsSource="{Binding PreDefinedAreaList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Geokey" Binding="{Binding Geokey}" IsReadOnly="True" />
+                <DataGridTextColumn Header="HH Brutto" Binding="{Binding HH_Brutto}" IsReadOnly="True" />
+                <DataGridTextColumn Header="HH Netto" Binding="{Binding HH_Netto}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Auflage" Binding="{Binding Auflage}" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

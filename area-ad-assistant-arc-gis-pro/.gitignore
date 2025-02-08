@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.Core/bin/Debug/netstandard2.1
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.Core/obj
+/ArcGis Planner Toolbox WPF/.vs
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net6.0-windows
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/obj
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.Core/bin/Debug
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net8.0-windows7.0
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net6.0-windows7.0
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug
+*.dll
+*.pdb
+*.esriAddinX
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net6.0-windows7.0/ArcGisPlannerToolbox.Core.dll
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net6.0-windows7.0/ArcGisPlannerToolbox.Core.pdb
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net6.0-windows7.0/ArcGisPlannerToolbox.WPF.dll
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net6.0-windows7.0/ArcGisPlannerToolbox.WPF.esriAddinX
+/ArcGis Planner Toolbox WPF/ArcGisPlannerToolbox.WPF/bin/Debug/net6.0-windows7.0/ArcGisPlannerToolbox.WPF.pdb

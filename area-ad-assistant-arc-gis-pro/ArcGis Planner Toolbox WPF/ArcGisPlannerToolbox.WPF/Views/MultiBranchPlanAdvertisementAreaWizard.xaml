@@ -1,0 +1,50 @@
+﻿<controls:ProWindow x:Class="ArcGisPlannerToolbox.WPF.Views.MultiBranchPlanAdvertisementAreaWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views"
+        xmlns:wizardPages="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+        xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:customBehaviors="clr-namespace:ArcGisPlannerToolbox.WPF.Behaviors"
+        xmlns:customControls="clr-namespace:ArcGisPlannerToolbox.WPF.Controls"
+        mc:Ignorable="d"
+        Height="650" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="True" ShowMinButton="True">
+    <controls:ProWindow.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </controls:ProWindow.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnWindowLoaded" />
+        </behaviors:EventTrigger>
+        <behaviors:EventTrigger EventName="Closing">
+            <behaviors:InvokeCommandAction Command="{Binding ClosingCommand}" PassEventArgsToCommand="True" />
+        </behaviors:EventTrigger>
+        <behaviors:EventTrigger EventName="Closed">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnWindowClosed" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <behaviors:Interaction.Behaviors>
+        <customBehaviors:WindowCursorUpdateBehavior />
+    </behaviors:Interaction.Behaviors>
+    <Grid>
+        <customControls:WizardControl Margin="10" DataContext="{Binding WizardControlViewModel}">
+            <customControls:WizardControl.Steps>
+                <wizardPages:CustomerDataView />
+                <wizardPages:ParticipatingBranchesView />
+                <wizardPages:ParticipatingBranchesView1 />
+                <wizardPages:ParticipatingBranchesView2 />
+                <wizardPages:SecuredPlanningsView />
+                <wizardPages:PreliminaryBranchAreasView />
+                <wizardPages:DetailinformationenView />
+                <wizardPages:PlanningStatisticsView />
+                <wizardPages:DetailedPlanningView />
+                <wizardPages:OptimizationView />
+                <wizardPages:ExportView />
+            </customControls:WizardControl.Steps>
+        </customControls:WizardControl>
+    </Grid>
+</controls:ProWindow>

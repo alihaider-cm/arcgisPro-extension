@@ -1,0 +1,35 @@
+﻿<controls:ProWindow x:Class="ArcGisPlannerToolbox.WPF.Views.SubTourWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views"
+        xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:customBehaviors="clr-namespace:ArcGisPlannerToolbox.WPF.Behaviors"
+        mc:Ignorable="d"
+        Title="Untertour anlegen" ShowInTaskbar="True" ShowMinButton="True" WindowStartupLocation="CenterScreen"
+        MaxWidth="200" MinHeight="250" MaxHeight="220" ShowMaxRestoreButton="False">
+    <controls:ProWindow.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </controls:ProWindow.Resources>
+    <Border Padding="10 20">
+        <StackPanel>
+            <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                     materialDesign:HintAssist.Hint="Ort"
+                     Text="{Binding Ort}" Padding="5" />
+            <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                     materialDesign:HintAssist.Hint="Ortsteil"
+                     Text="{Binding Ortsteil}" Padding="5" Margin="0 10" />
+            <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                     materialDesign:HintAssist.Hint="Auflage"
+                     Text="{Binding Auflage, Converter={StaticResource TextToNumberConverter}, UpdateSourceTrigger=PropertyChanged}" Padding="5">
+                <behaviors:Interaction.Behaviors>
+                    <customBehaviors:TextBoxNumericInputBehavior />
+                </behaviors:Interaction.Behaviors>
+            </TextBox>
+            <Button Margin="0 10 0 0" Content="Übernehmen" Command="{Binding SubmitCommand}" />
+        </StackPanel>
+    </Border>
+</controls:ProWindow>

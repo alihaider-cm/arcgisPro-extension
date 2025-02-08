@@ -1,0 +1,66 @@
+﻿<ArcGIS defaultAssembly="ArcGisPlannerToolbox.WPF.dll"
+		defaultNamespace="ArcGisPlannerToolbox.WPF"
+		xmlns="http://schemas.esri.com/DADF/Registry"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+	<AddInInfo id="{e055f212-c3d0-4b7c-afae-705201648481}" version="1.3.3" desktopVersion="3.2.2">
+		<Name>ArcGisPlannerToolbox.WPF</Name>
+		<Description>Assistent für Mediaplanung in ArcGIS Pro</Description>
+		<Image>Images\AddinDesktop32.png</Image>
+		<Author>Philipp Rollmann</Author>
+		<Company>Chainmatics GmbH</Company>
+		<Date>1/8/2024 2:58:01 PM</Date>
+		<Subject>Framework</Subject>
+		<!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+	</AddInInfo>
+	<modules>
+		<insertModule id="mainModule" className="ArcGisPlannerToolbox.WPF.Modules.MainModule" caption="Primary Module" autoLoad="true">
+			<tabs>
+				<tab id="tab_extra_features" caption="Extra Features">
+					<group refID="dockPanels_group1" />
+					<group refID="dockPanels_group2" />
+				</tab>
+			</tabs>
+			<groups>
+				<group id="dockPanels_group1" caption="Medium-Aktionen">
+					<button refID="adArea_FilterMediaDialog" size="large" />
+					<button refID="adArea_MediaDigitizerWindow" size="large" />
+					<button refID="adArea_StatusFormWindow" size="large" />
+				</group>
+				<group id="dockPanels_group2" caption="Werbegebietsplanung">
+					<button refID="adArea_MultibranchWindow" size="large" />
+					<button refID="adArea_SinglebranchWindow" size="large" />
+				</group>
+			</groups>
+			<controls>
+				<button id="adArea_FilterMediaDialog" caption="Medien Filter öffnen" smallImage="GenericButtonRed16" largeImage="GenericButtonRed32" loadOnClick="true" className="ArcGisPlannerToolbox.WPF.Controls.DockPanelShowButton">
+					<tooltip heading="Medien Filtern Dockpane">
+						Open Dockpane
+					</tooltip>
+				</button>
+				<button id="adArea_MediaDigitizerWindow" caption="Digitalisieren" smallImage="GenericButtonRed16" largeImage="GenericButtonRed32" loadOnClick="true" className="ArcGisPlannerToolbox.WPF.Controls.MediaDigitizerWindowButton">
+					<tooltip heading="Open Media Digitizer Window" />
+				</button>
+				<button id="adArea_MultibranchWindow" caption="Großraumplanung" smallImage="GenericButtonRed16" largeImage="GenericButtonRed32" loadOnClick="true" className="ArcGisPlannerToolbox.WPF.Controls.MultiBranchPlanAdvertisementAreaWizardButton">
+					<tooltip heading="Öffnet einen Wizzard zur Tertialplanung">
+						Open Wizard
+					</tooltip>
+				</button>
+				<button id="adArea_SinglebranchWindow" caption="Einzelfilialplanung" smallImage="GenericButtonRed16" largeImage="GenericButtonRed32" loadOnClick="true" className="ArcGisPlannerToolbox.WPF.Controls.PlanAdvertisementAreaWizardButton">
+					<tooltip heading="Öffnet einen Wizzard zur Tertialplanung">
+						Öffnet einen Wizzard zur Werbegebietsplanung.
+					</tooltip>
+				</button>
+				<button id="adArea_StatusFormWindow" caption="Status der Mediendigitalisierung" smallImage="GenericButtonRed16" largeImage="GenericButtonRed32" loadOnClick="true" className="ArcGisPlannerToolbox.WPF.Controls.DigitizedMediaStatusButton">
+					<tooltip heading="Öffnet einen Wizzard zur Tertialplanung" />
+				</button>
+			</controls>
+			<dockPanes>
+				<dockPane id="doc_filterMedia" caption="Medien Filtern" width="450" dockWith="esri_core_projectDockPane" dock="right" className="ArcGisPlannerToolbox.WPF.ViewModels.FilterMediaDockViewModel">
+					<content className="ArcGisPlannerToolbox.WPF.Views.FilterMediaDock" />
+				</dockPane>
+			</dockPanes>
+		</insertModule>
+	</modules>
+</ArcGIS>

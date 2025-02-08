@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="ArcGisPlannerToolbox.WPF.Views.Wizard.SecuredPlanningsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:customBehaviors="clr-namespace:ArcGisPlannerToolbox.WPF.Behaviors"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </UserControl.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <GroupBox>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Suchen:" Margin="10 0" />
+                <TextBox Grid.Column="1" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}">
+                    <behaviors:Interaction.Triggers>
+                        <behaviors:EventTrigger EventName="TextChanged">
+                            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnTextChanged" />
+                        </behaviors:EventTrigger>
+                    </behaviors:Interaction.Triggers>
+                </TextBox>
+            </Grid>
+            <DataGrid Grid.Row="1" Margin="0 10" ItemsSource="{Binding Plannings}" SelectedItem="{Binding SelectedPlanning}" SelectionMode="Single" SelectionUnit="FullRow">
+                <behaviors:Interaction.Triggers>
+                    <behaviors:EventTrigger EventName="SelectionChanged">
+                        <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnSelectionChanged" />
+                    </behaviors:EventTrigger>
+                </behaviors:Interaction.Triggers>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Planungs Nr" Binding="{Binding Planungs_Nr}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Konzept Nr" Binding="{Binding Konzept_Nr}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Kunden ID" Binding="{Binding Kunden_ID}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Kunden Name" Binding="{Binding Kunden_Name}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="HH Brutto" Binding="{Binding HH_Brutto}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="HH Netto" Binding="{Binding HH_Netto}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Auflage" Binding="{Binding Auflage}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Planungsende" Binding="{Binding Planungsende}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Planungstyp" Binding="{Binding Planungstyp}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Planung von" Binding="{Binding Planung_von}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Analyse Id" Binding="{Binding Analyse_Id}" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </GroupBox>
+</UserControl>

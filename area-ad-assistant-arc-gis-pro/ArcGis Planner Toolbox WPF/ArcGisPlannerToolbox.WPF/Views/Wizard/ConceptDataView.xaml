@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="ArcGisPlannerToolbox.WPF.Views.Wizard.ConceptDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </UserControl.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid VerticalAlignment="Top" Margin="0 0 20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Geometrie:" />
+            <TextBlock Text="Gebietsbezeichnung:" Grid.Row="1" />
+            <TextBlock Text="Gültig ab [YYYY-KW]:" Grid.Row="2" />
+            <TextBlock Text="gilt nur in ausge-wählter KW:" Grid.Row="3" />
+            <TextBlock Text="Sichtbar Mediamaps:" Grid.Row="4" />
+            <TextBlock Text="Aktionstyp:" Grid.Row="5" />
+            <TextBlock Text="Werbegebietsstatus:" Grid.Row="6" />
+            <ComboBox Grid.Column="1" ItemsSource="{Binding Geometries}" SelectedItem="{Binding SelectedGeometry}" IsEnabled="False" Height="30" />
+            <ComboBox Grid.Column="1" ItemsSource="{Binding AreaNames}" SelectedItem="{Binding SelectedAreaName}" Height="30" Grid.Row="1" Margin="0 5" />
+            <TextBox Grid.Column="1" Grid.Row="2" Height="30" Text="{Binding DateText}">
+                <behaviors:Interaction.Triggers>
+                    <behaviors:EventTrigger EventName="LostFocus">
+                        <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnDateInputFocusLost" />
+                    </behaviors:EventTrigger>
+                </behaviors:Interaction.Triggers>
+            </TextBox>
+            <CheckBox Grid.Column="1" Grid.Row="3" Margin="0 10 0 10" IsChecked="{Binding WeekSelection}" />
+            <CheckBox Grid.Column="1" Grid.Row="4" IsChecked="{Binding VisibleInMedia}" />
+            <ComboBox Grid.Column="1" ItemsSource="{Binding ActionTypes}" SelectedItem="{Binding SelectedActionType}" Height="30" Grid.Row="5" Margin="0 5" />
+            <ComboBox Grid.Column="1" ItemsSource="{Binding ActionStates}" SelectedItem="{Binding SelectedActionState}" Height="30" Grid.Row="6" />
+            <Button Grid.Row="7" Grid.Column="1" Content="Save" Margin="0 10" Command="{Binding OnSaveCommand}" />
+        </Grid>
+        <ListView Grid.Column="1" ItemsSource="{Binding NearestCustomerBranches}" SelectionMode="Multiple" SelectedItem="{Binding SelectedNearestCustomerBranches}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Filial Id">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Filial_Id}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Filial Nr" DisplayMemberBinding="{Binding Filial_Nr}" />
+                    <GridViewColumn Header="Filial Name" DisplayMemberBinding="{Binding Filialname}" />
+                    <GridViewColumn Header="Straße" DisplayMemberBinding="{Binding Straße}" />
+                    <GridViewColumn Header="PLZ" DisplayMemberBinding="{Binding PLZ}" />
+                    <GridViewColumn Header="ORT" DisplayMemberBinding="{Binding ORT}" />
+                    <GridViewColumn Header="Entfernung in km" DisplayMemberBinding="{Binding Entfernung_in_km}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

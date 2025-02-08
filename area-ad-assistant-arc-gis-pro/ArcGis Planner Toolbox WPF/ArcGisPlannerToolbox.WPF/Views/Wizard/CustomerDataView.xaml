@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ArcGisPlannerToolbox.WPF.Views.Wizard.CustomerDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </UserControl.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnWindowLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Kundenname:" />
+        <ComboBox Grid.Column="1" ItemsSource="{Binding CustomerNames}" Width="200"
+                  SelectedItem="{Binding SelectedCustomerName}" Margin="10 0" HorizontalAlignment="Left" />
+        <TextBlock Text="Filialwahl:" Grid.Row="1" Margin="0 20 0 0" />
+        <RadioButton Grid.Column="1" Grid.Row="1" Content="Alle Filialen" Command="{Binding RadioSelectionCommand}" CommandParameter="All" Margin="10 20 0 0" />
+        <RadioButton Grid.Column="1" Grid.Row="2" Content="Aus Liste selektieren" Command="{Binding RadioSelectionCommand}" CommandParameter="SelectFromList" Margin="10 5" />
+        <RadioButton Grid.Column="1" Grid.Row="3" Content="Liste importieren" Command="{Binding RadioSelectionCommand}" CommandParameter="ImportList" Margin="10 0" />
+        <RadioButton Grid.Column="1" Grid.Row="4" Content="Bestehende Planung öffnen" Command="{Binding RadioSelectionCommand}" CommandParameter="OpenFormerPlanning" Margin="10 5" />
+    </Grid>
+</UserControl>

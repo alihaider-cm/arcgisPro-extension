@@ -1,0 +1,154 @@
+﻿<UserControl x:Class="ArcGisPlannerToolbox.WPF.Views.Wizard.DetailedPlanningView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:customBehaviors="clr-namespace:ArcGisPlannerToolbox.WPF.Behaviors"
+             xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </UserControl.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Filiale suchen:" />
+                <TextBox Grid.Column="1" Width="150" Margin="10 0" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}">
+                    <behaviors:Interaction.Triggers>
+                        <behaviors:EventTrigger EventName="TextChanged">
+                            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnTextChanged" />
+                        </behaviors:EventTrigger>
+                    </behaviors:Interaction.Triggers>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Column="1" Margin="0 10" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Button Content="Filiale initial festsetzen" Command="{Binding SetInitiallyCommand}" />
+                <Button Grid.Column="1" Content="Filiale hinzufügen" Margin="10 0" Command="{Binding AddBranchCommand}" />
+                <Button Grid.Column="2" Content="Änderungen übernehmen" IsEnabled="{Binding SaveChangesButtonEnable}" Command="{Binding SaveChangesCommand}" />
+                <Button Grid.Column="3" Content="Aufheben" Margin="10 0 0 0" Command="{Binding ClearChangesCommand}" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ListView Margin="0 7 5 0" ItemsSource="{Binding PlannedBranches}" SelectedItem="{Binding SelectedPlannedBranch}"
+                      >
+                <behaviors:Interaction.Behaviors>
+                    <customBehaviors:ListViewGroupingBehavior GroupBy="VonAlgorithmusGeplant" SortBy="Filial_Nr" Items="{Binding PlannedBranches}" />
+                </behaviors:Interaction.Behaviors>
+                <behaviors:Interaction.Triggers>
+                    <behaviors:EventTrigger EventName="SelectionChanged">
+                        <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnPlannedBranchesSelectionChanged" />
+                    </behaviors:EventTrigger>
+                </behaviors:Interaction.Triggers>
+                <ListView.View>
+                    <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                        <GridView.Columns>
+                            <GridViewColumn Header="Filial Nr" Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox x:Name="_filialNrCheckBox" Content="{Binding Filial_Nr}" IsChecked="{Binding IsChecked}">
+                                            <behaviors:Interaction.Triggers>
+                                                <behaviors:EventTrigger EventName="Checked">
+                                                    <behaviors:InvokeCommandAction Command="{Binding DataContext.ListViewCheckBoxCheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding Path=Content, ElementName=_filialNrCheckBox}" />
+                                                </behaviors:EventTrigger>
+                                                <behaviors:EventTrigger EventName="Unchecked">
+                                                    <behaviors:InvokeCommandAction Command="{Binding DataContext.ListViewCheckBoxUncheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding Path=Content, ElementName=_filialNrCheckBox}" />
+                                                </behaviors:EventTrigger>
+                                            </behaviors:Interaction.Triggers>
+                                        </CheckBox>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Filialname" DisplayMemberBinding="{Binding Filialname}" />
+                            <GridViewColumn Header="Straße" DisplayMemberBinding="{Binding Straße}" />
+                            <GridViewColumn Header="PLZ" DisplayMemberBinding="{Binding PLZ}" />
+                            <GridViewColumn Header="Ort" DisplayMemberBinding="{Binding ORT}" />
+                            <GridViewColumn Header="Besitzt Gebiete" DisplayMemberBinding="{Binding VonAlgorithmusGeplant}" />
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="GroupItem" BasedOn="{StaticResource ListViewGroupItem}" />
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </ListView.GroupStyle>
+            </ListView>
+            <ListView Grid.Column="1" Margin="5 0 0 0" ItemsSource="{Binding CurrentAreasOfInterest}"
+                      ItemContainerStyle="{StaticResource MaterialDesignCompactGridViewItem}">
+                <ListView.View>
+                    <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                        <GridView.Columns>
+                            <GridViewColumn Header="Geokey" Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox x:Name="_geoKeyCheckBox" Content="{Binding Geokey}" IsChecked="{Binding IsChecked}">
+                                            <behaviors:Interaction.Triggers>
+                                                <behaviors:EventTrigger EventName="Checked">
+                                                    <behaviors:InvokeCommandAction Command="{Binding DataContext.AreaListViewCheckBoxCheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                                                                   CommandParameter="{Binding Path=Content,RelativeSource={RelativeSource AncestorType=CheckBox}}" />
+                                                </behaviors:EventTrigger>
+                                                <behaviors:EventTrigger EventName="Unchecked">
+                                                    <behaviors:InvokeCommandAction Command="{Binding DataContext.AreaListViewCheckBoxUncheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                                                                   CommandParameter="{Binding Path=Content,RelativeSource={RelativeSource AncestorType=CheckBox}}" />
+                                                </behaviors:EventTrigger>
+                                            </behaviors:Interaction.Triggers>
+                                        </CheckBox>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="HH Brutto" DisplayMemberBinding="{Binding HH_Brutto}" />
+                            <GridViewColumn Header="HH Netto" DisplayMemberBinding="{Binding HH_Netto}" />
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <ListView Grid.Row="2" Margin="0 10" ItemsSource="{Binding PlanningData}"
+                  ItemContainerStyle="{StaticResource MaterialDesignCompactGridViewItem}">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                    <GridView.Columns>
+                        <GridViewColumn Header="Zielauflage" DisplayMemberBinding="{Binding Zielauflage1}" />
+                        <GridViewColumn Header="Stand" DisplayMemberBinding="{Binding Stand}" />
+                        <GridViewColumn Header="HH Brutto" DisplayMemberBinding="{Binding HH_Brutto}" />
+                        <GridViewColumn Header="HH Netto" DisplayMemberBinding="{Binding HH_Netto}" />
+                        <GridViewColumn Header="Auflage" DisplayMemberBinding="{Binding Auflage}" />
+                        <GridViewColumn Header="Planungsbeginn" DisplayMemberBinding="{Binding Planungsbeginn}" />
+                        <GridViewColumn Header="Planungsende" DisplayMemberBinding="{Binding Planungsende}" />
+                        <GridViewColumn Header="Planungstyp" DisplayMemberBinding="{Binding Planungstyp}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

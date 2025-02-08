@@ -1,0 +1,131 @@
+﻿<controls:ProWindow x:Class="ArcGisPlannerToolbox.WPF.Views.DigitizedMediaStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:customBehaviors="clr-namespace:ArcGisPlannerToolbox.WPF.Behaviors"
+        xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views"
+        mc:Ignorable="d"
+        Title="Status" Height="450" Width="800" ShowMinButton="True">
+    <controls:ProWindow.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </controls:ProWindow.Resources>
+    <behaviors:Interaction.Behaviors>
+        <customBehaviors:WindowCursorUpdateBehavior />
+    </behaviors:Interaction.Behaviors>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnWindowLoaded" />
+        </behaviors:EventTrigger>
+        <behaviors:EventTrigger EventName="Closed">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnWindowClosed" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+        <TabControl Style="{StaticResource MaterialDesignFilledTabControl}" materialDesign:ColorZoneAssist.Mode="Custom"
+                    materialDesign:ColorZoneAssist.Background="{StaticResource PrimaryBackgroundColor}"
+                    materialDesign:ColorZoneAssist.Foreground="White">
+            <TabItem Header="Digitalisierungsstand">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Stand der Digitalisierung je Medium" VerticalAlignment="Center" />
+                    <TextBox HorizontalAlignment="Right" Width="200" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}">
+                        <behaviors:Interaction.Triggers>
+                            <behaviors:EventTrigger EventName="TextChanged">
+                                <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnSearchTextChanged" />
+                            </behaviors:EventTrigger>
+                        </behaviors:Interaction.Triggers>
+                    </TextBox>
+                    <ListView Grid.Row="1" Margin="0 10" ItemContainerStyle="{StaticResource MaterialDesignCompactGridViewItem}"
+                              ItemsSource="{Binding MediaDigitizationStates}">
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                                <GridView.Columns>
+                                    <GridViewColumn Header="MEDIUM ID" DisplayMemberBinding="{Binding MEDIUM_ID}" />
+                                    <GridViewColumn Header="PLZ Scharf" DisplayMemberBinding="{Binding PLZ_Scharf}" />
+                                    <GridViewColumn Header="MEDIUM NAME" DisplayMemberBinding="{Binding MEDIUM_NAME}" />
+                                    <GridViewColumn Header="DIGITALISIERT VON" DisplayMemberBinding="{Binding DIGITALISIERT_VON}" />
+                                    <GridViewColumn Header="DIGITALISIERT ZULETZT AM" DisplayMemberBinding="{Binding DIGITALISIERT_ZULETZT_AM}" />
+                                    <GridViewColumn Header="EBENEN GESAMT" DisplayMemberBinding="{Binding EBENEN_GESAMT}" />
+                                    <GridViewColumn Header="EBENEN DIGITALISIERT" DisplayMemberBinding="{Binding EBENEN_DIGITALISIERT}" />
+                                    <GridViewColumn Header="EBENEN SYSTEM DIGITALISIERT" DisplayMemberBinding="{Binding EBENEN_SYSTEM_DIGITALISIERT}" />
+                                    <GridViewColumn Header="EBENEN DIGITALISIERT PROZENT" DisplayMemberBinding="{Binding EBENEN_DIGITALISIERT_PROZENT}" />
+                                    <GridViewColumn Header="EBENE BEZEICHNUNG" DisplayMemberBinding="{Binding EBENE_BEZEICHNUNG}" />
+                                    <GridViewColumn Header="ARBEITSSTATUS" DisplayMemberBinding="{Binding ARBEITSSTATUS}" />
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                        <behaviors:Interaction.Triggers>
+                            <behaviors:EventTrigger EventName="MouseDoubleClick">
+                                <behaviors:CallMethodAction TargetObject="{Binding}"
+                                                            MethodName="OnMediaMouseDoubleClick"/>
+                            </behaviors:EventTrigger>
+                        </behaviors:Interaction.Triggers>
+                    </ListView>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <Button Content="Excel Export" Command="{Binding OnExport}" />
+                        <ComboBox Visibility="Hidden" Margin="20 0" Width="150" SelectedItem="{Binding SelectedSpreadType}" ItemsSource="{Binding SpreadTypes}" />
+                        <TextBlock Margin="50 0 0 0">
+                            <Run Text="Beendet:" />
+                            <Run Text="{Binding FinishedText}" />
+                        </TextBlock>
+                        <TextBlock Margin="50 0 0 0">
+                            <Run Text="In Bearbeitung:" />
+                            <Run Text="{Binding InProcessText}" />
+                        </TextBlock>
+                        <TextBlock Margin="50 0 0 0">
+                            <Run Text="Nicht begonnen:" />
+                            <Run Text="{Binding NotStartedText}" />
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Diese Touren benötigen Aufmerksamkeit">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="10 10" Text="Bereits digitalisierte und nach Update vom System nicht digitalisierbare Touren" />
+                    <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding TourList}">
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource MaterialDesignCompactGridViewColumnHeader}">
+                                <GridView.Columns>
+                                    <GridViewColumn Header="BBE ID" DisplayMemberBinding="{Binding OccupancyUnitId}" />
+                                    <GridViewColumn Header="MID" DisplayMemberBinding="{Binding MediaId}" />
+                                    <GridViewColumn Header="Ausgabe" DisplayMemberBinding="{Binding Issue}" />
+                                    <GridViewColumn Header="Tour" DisplayMemberBinding="{Binding TourName}" />
+                                    <GridViewColumn Header="Tour ID" DisplayMemberBinding="{Binding TourId}" />
+                                    <GridViewColumn Header="Tour Number" DisplayMemberBinding="{Binding TourNumber}" />
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="GroupItem" BasedOn="{StaticResource PlannerListViewGroupItem}" />
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </ListView.GroupStyle>
+                        <behaviors:Interaction.Behaviors>
+                            <customBehaviors:ListViewGroupingBehavior GroupBy="MediaId" SortBy="MediaId" />
+                        </behaviors:Interaction.Behaviors>
+                        <behaviors:Interaction.Triggers>
+                            <behaviors:EventTrigger EventName="MouseDoubleClick">
+                                <behaviors:CallMethodAction TargetObject="{Binding}"
+                                    MethodName="OnTourMouseDoubleClick"/>
+                            </behaviors:EventTrigger>
+                        </behaviors:Interaction.Triggers>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</controls:ProWindow>

@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="ArcGisPlannerToolbox.WPF.Views.Wizard.BranchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArcGisPlannerToolbox.WPF.Views.Wizard"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ArcGisPlannerToolbox.WPF;component\Resources\Theme.xaml" />
+    </UserControl.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left" Margin="10">
+            <TextBox Text="{Binding SelectedBranch.Kundenname}" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="300" materialDesign:HintAssist.Hint="Kunde" />
+            <TextBox Text="{Binding SelectedBranch.Filial_Nr}" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="300" materialDesign:HintAssist.Hint="Filial Nr" Margin="0 10" />
+            <TextBox Text="{Binding SelectedBranch.Filialname}" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="300" materialDesign:HintAssist.Hint="Filial Name" />
+            <TextBox Text="{Binding SelectedBranch.Straße}" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="300" materialDesign:HintAssist.Hint="Straße" Margin="0 10" />
+            <TextBox Text="{Binding SelectedBranch.ORT}" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="300" materialDesign:HintAssist.Hint="Ort" />
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <TextBlock Text="Vorhandene Werbegebiete" HorizontalAlignment="Left" />
+            <WrapPanel HorizontalAlignment="Right" Margin="10 0">
+                <RadioButton Content="Alle" Margin="10 0" IsChecked="True">
+                    <behaviors:Interaction.Triggers>
+                        <behaviors:EventTrigger EventName="Checked">
+                            <behaviors:InvokeCommandAction Command="{Binding AreaChangedCommand}" CommandParameter="Alle" PassEventArgsToCommand="True" />
+                        </behaviors:EventTrigger>
+                    </behaviors:Interaction.Triggers>
+                </RadioButton>
+                <RadioButton Content="Ist">
+                    <behaviors:Interaction.Triggers>
+                        <behaviors:EventTrigger EventName="Checked">
+                            <behaviors:InvokeCommandAction Command="{Binding AreaChangedCommand}" CommandParameter="Ist" PassEventArgsToCommand="True" />
+                        </behaviors:EventTrigger>
+                    </behaviors:Interaction.Triggers>
+                </RadioButton>
+                <RadioButton Content="Plan" Margin="10 0">
+                    <behaviors:Interaction.Triggers>
+                        <behaviors:EventTrigger EventName="Checked">
+                            <behaviors:InvokeCommandAction Command="{Binding AreaChangedCommand}" CommandParameter="Plan" PassEventArgsToCommand="True" />
+                        </behaviors:EventTrigger>
+                    </behaviors:Interaction.Triggers>
+                </RadioButton>
+                <RadioButton Content="Archiv">
+                    <behaviors:Interaction.Triggers>
+                        <behaviors:EventTrigger EventName="Checked">
+                            <behaviors:InvokeCommandAction Command="{Binding AreaChangedCommand}" CommandParameter="Archiv" PassEventArgsToCommand="True" />
+                        </behaviors:EventTrigger>
+                    </behaviors:Interaction.Triggers>
+                </RadioButton>
+            </WrapPanel>
+        </Grid>
+        <DataGrid Grid.Row="2" Margin="0 10" ItemsSource="{Binding AdvertisementAreaStatistics}"
+                  SelectedItem="{Binding SelectedAdvertisementAreaStatistics}"
+                  Style="{StaticResource MaterialDesignCompactDataGrid}" IsReadOnly="True">
+            <behaviors:Interaction.Triggers>
+                <behaviors:EventTrigger EventName="SelectionChanged">
+                    <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnSelectionChanged" />
+                </behaviors:EventTrigger>
+                <behaviors:EventTrigger EventName="MouseDoubleClick">
+                    <behaviors:CallMethodAction TargetObject="{Binding}" MethodName="OnMouseDoubleClick" />
+                </behaviors:EventTrigger>
+            </behaviors:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Filial ID" Binding="{Binding Filial_ID}" />
+                <DataGridTextColumn Header="Vertiriebslinie" Binding="{Binding Vertriebslinie}" />
+                <DataGridTextColumn Header="Werbegebiets Nr" Binding="{Binding Werbegebiets_Nr}" />
+                <DataGridTextColumn Header="Gebietsbezeichnung" Binding="{Binding Gebietsbezeichnung}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Werbegebietsstatus}" />
+                <DataGridTextColumn Header="Gültig Ab" Binding="{Binding gültig_ab_Jahr_KW}" />
+                <DataGridTextColumn Header="Gültig Bis" Binding="{Binding gültig_bis_Jahr_KW}" />
+                <DataGridTextColumn Header="Basisgeometrie" Binding="{Binding Basisgeometrie}" />
+                <DataGridTextColumn Header="Aktionstyp" Binding="{Binding Aktionstyp}" />
+                <DataGridTextColumn Header="Gesamtauflage" Binding="{Binding Gesamtauflage}" />
+                <DataGridTextColumn Header="Anzahl Medien" Binding="{Binding Anzahl_Medien}" />
+                <DataGridTextColumn Header="ISIS Sichtbar" Binding="{Binding ISIS_sichtbar}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

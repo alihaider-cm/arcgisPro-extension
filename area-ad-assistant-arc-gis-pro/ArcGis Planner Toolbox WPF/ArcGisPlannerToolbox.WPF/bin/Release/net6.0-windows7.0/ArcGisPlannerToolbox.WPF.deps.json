@@ -1,0 +1,1766 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {},
+    ".NETCoreApp,Version=v6.0/win-x64": {
+      "ArcGisPlannerToolbox.WPF/1.0.0": {
+        "dependencies": {
+          "ArcGisPlannerToolbox.Core": "1.0.0",
+          "Autofac": "7.1.0",
+          "ClosedXML": "0.96.0",
+          "CommunityToolkit.Mvvm": "8.2.2",
+          "Dapper.SimpleCRUD": "2.3.0",
+          "DocumentFormat.OpenXml": "2.16.0",
+          "ExcelDataReader": "3.6.0",
+          "ExcelDataReader.DataSet": "3.6.0",
+          "LiveChartsCore.SkiaSharpView.WPF": "2.0.0-rc2",
+          "MaterialDesignThemes": "4.9.0",
+          "Npgsql": "6.0.11",
+          "Syncfusion.XlsIO.Wpf": "25.1.39",
+          "ArcGIS.Core": "13.2.0.0",
+          "ArcGIS.Desktop.Catalog": "13.2.0.0",
+          "ArcGIS.Desktop.Core": "13.2.0.0",
+          "ArcGIS.Desktop.DataGrid.Contrib.Wpf": "20.1.1.0",
+          "ArcGIS.Desktop.Editing": "13.2.0.0",
+          "ArcGIS.Desktop.Editors.Wpf": "23.1.2.0",
+          "ArcGIS.Desktop.Extensions": "13.2.0.0",
+          "ArcGIS.Desktop.Framework": "13.2.0.0",
+          "ArcGIS.Desktop.GeoProcessing": "13.2.0.0",
+          "ArcGIS.Desktop.Layouts": "13.2.0.0",
+          "ArcGIS.Desktop.Mapping": "13.2.0.0",
+          "ArcGIS.Desktop.Resources": "13.2.0.0",
+          "ArcGIS.Desktop.Ribbon.Wpf": "23.1.2.0",
+          "ArcGIS.Desktop.Shared.Wpf": "23.1.2.0",
+          "ESRI.ArcGIS.ItemIndex": "13.2.0.0"
+        },
+        "runtime": {
+          "ArcGisPlannerToolbox.WPF.dll": {}
+        }
+      },
+      "Autofac/7.1.0": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
+          }
+        }
+      },
+      "Azure.Core/1.35.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
+          "System.Memory.Data": "1.0.2",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Text.Encodings.Web": "6.0.0",
+          "System.Text.Json": "4.7.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/net6.0/Azure.Core.dll": {
+            "assemblyVersion": "1.35.0.0",
+            "fileVersion": "1.3500.23.45706"
+          }
+        }
+      },
+      "Azure.Identity/1.10.3": {
+        "dependencies": {
+          "Azure.Core": "1.35.0",
+          "Microsoft.Identity.Client": "4.56.0",
+          "Microsoft.Identity.Client.Extensions.Msal": "4.56.0",
+          "System.Memory": "4.5.4",
+          "System.Security.Cryptography.ProtectedData": "6.0.0",
+          "System.Text.Json": "4.7.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Identity.dll": {
+            "assemblyVersion": "1.10.3.0",
+            "fileVersion": "1.1000.323.51804"
+          }
+        }
+      },
+      "ClosedXML/0.96.0": {
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.16.0",
+          "ExcelNumberFormat": "1.1.0",
+          "Microsoft.CSharp": "4.7.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.dll": {
+            "assemblyVersion": "0.96.0.0",
+            "fileVersion": "0.96.0.0"
+          }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "assemblyVersion": "8.2.0.0",
+            "fileVersion": "8.2.2.1"
+          }
+        }
+      },
+      "Dapper/2.1.28": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.28.55233"
+          }
+        }
+      },
+      "Dapper.SimpleCRUD/2.3.0": {
+        "dependencies": {
+          "Dapper": "2.1.28",
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dapper.SimpleCRUD.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml/2.16.0": {
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "2.16.0.0",
+            "fileVersion": "2.16.0.0"
+          }
+        }
+      },
+      "ExcelDataReader/3.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/ExcelDataReader.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          }
+        }
+      },
+      "ExcelDataReader.DataSet/3.6.0": {
+        "dependencies": {
+          "ExcelDataReader": "3.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          }
+        }
+      },
+      "ExcelNumberFormat/1.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp/7.3.0": {
+        "dependencies": {
+          "HarfBuzzSharp.NativeAssets.Win32": "7.3.0",
+          "HarfBuzzSharp.NativeAssets.macOS": "7.3.0"
+        },
+        "runtime": {
+          "lib/net6.0/HarfBuzzSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "7.3.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {},
+      "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+        "native": {
+          "runtimes/win-x64/native/libHarfBuzzSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "LiveChartsCore/2.0.0-rc2": {
+        "runtime": {
+          "lib/net6.0/LiveChartsCore.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "LiveChartsCore.SkiaSharpView/2.0.0-rc2": {
+        "dependencies": {
+          "LiveChartsCore": "2.0.0-rc2",
+          "SkiaSharp": "2.88.6",
+          "SkiaSharp.HarfBuzz": "2.88.6"
+        },
+        "runtime": {
+          "lib/net6.0/LiveChartsCore.SkiaSharpView.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "LiveChartsCore.SkiaSharpView.WPF/2.0.0-rc2": {
+        "dependencies": {
+          "LiveChartsCore.SkiaSharpView": "2.0.0-rc2",
+          "SkiaSharp.Views.WPF": "2.88.6"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/LiveChartsCore.SkiaSharpView.WPF.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "MaterialDesignColors/2.1.4": {
+        "runtime": {
+          "lib/net6.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "2.1.4.0",
+            "fileVersion": "2.1.4.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.9.0": {
+        "dependencies": {
+          "MaterialDesignColors": "2.1.4",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39"
+        },
+        "runtime": {
+          "lib/net6.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.9.0.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {},
+      "Microsoft.Data.SqlClient/5.1.4": {
+        "dependencies": {
+          "Azure.Identity": "1.10.3",
+          "Microsoft.Data.SqlClient.SNI.runtime": "5.1.1",
+          "Microsoft.Identity.Client": "4.56.0",
+          "Microsoft.IdentityModel.JsonWebTokens": "6.24.0",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.24.0",
+          "Microsoft.SqlServer.Server": "1.0.0",
+          "System.Configuration.ConfigurationManager": "6.0.1",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
+          "System.Runtime.Caching": "6.0.0",
+          "System.Security.Cryptography.Cng": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0",
+          "System.Text.Encoding.CodePages": "6.0.0",
+          "System.Text.Encodings.Web": "6.0.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/net6.0/Microsoft.Data.SqlClient.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.14.24005.1"
+          }
+        }
+      },
+      "Microsoft.Data.SqlClient.SNI.runtime/5.1.1": {
+        "native": {
+          "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
+            "fileVersion": "5.1.1.0"
+          }
+        }
+      },
+      "Microsoft.Identity.Client/4.56.0": {
+        "dependencies": {
+          "Microsoft.Identity.Client.NativeInterop": "0.13.8",
+          "Microsoft.IdentityModel.Abstractions": "6.24.0",
+          "Microsoft.Web.WebView2": "1.0.864.35"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Identity.Client.dll": {
+            "assemblyVersion": "4.56.0.0",
+            "fileVersion": "4.56.0.0"
+          }
+        }
+      },
+      "Microsoft.Identity.Client.Extensions.Msal/4.56.0": {
+        "dependencies": {
+          "Microsoft.Identity.Client": "4.56.0",
+          "System.IO.FileSystem.AccessControl": "5.0.0",
+          "System.Security.Cryptography.ProtectedData": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+            "assemblyVersion": "4.56.0.0",
+            "fileVersion": "4.56.0.0"
+          }
+        }
+      },
+      "Microsoft.Identity.Client.NativeInterop/0.13.8": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Identity.Client.NativeInterop.dll": {
+            "assemblyVersion": "0.13.8.0",
+            "fileVersion": "0.13.8.0"
+          }
+        },
+        "native": {
+          "runtimes/win-x64/native/msalruntime.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Abstractions/6.24.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {
+            "assemblyVersion": "6.24.0.0",
+            "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.JsonWebTokens/6.24.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "6.24.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "assemblyVersion": "6.24.0.0",
+            "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Logging/6.24.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "6.24.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {
+            "assemblyVersion": "6.24.0.0",
+            "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/6.24.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "6.24.0",
+          "Microsoft.IdentityModel.Tokens": "6.24.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {
+            "assemblyVersion": "6.24.0.0",
+            "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.24.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "6.24.0",
+          "System.IdentityModel.Tokens.Jwt": "6.24.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+            "assemblyVersion": "6.24.0.0",
+            "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/6.24.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Microsoft.IdentityModel.Logging": "6.24.0",
+          "System.Security.Cryptography.Cng": "5.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "6.24.0.0",
+            "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.SqlServer.Server/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.864.35": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.864.35",
+            "fileVersion": "1.0.864.35"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.864.35",
+            "fileVersion": "1.0.864.35"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.864.35",
+            "fileVersion": "1.0.864.35"
+          }
+        },
+        "native": {
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "fileVersion": "1.0.864.35"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/6.0.0": {},
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.39.4716"
+          }
+        }
+      },
+      "Npgsql/6.0.11": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Npgsql.dll": {
+            "assemblyVersion": "6.0.11.0",
+            "fileVersion": "6.0.11.0"
+          }
+        }
+      },
+      "runtime.any.System.Runtime/4.3.0": {
+        "dependencies": {
+          "System.Private.Uri": "4.3.0"
+        }
+      },
+      "runtime.any.System.Text.Encoding/4.3.0": {},
+      "SkiaSharp/2.88.6": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.6",
+          "SkiaSharp.NativeAssets.macOS": "2.88.6"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
+          }
+        }
+      },
+      "SkiaSharp.HarfBuzz/2.88.6": {
+        "dependencies": {
+          "HarfBuzzSharp": "7.3.0",
+          "SkiaSharp": "2.88.6"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.6": {},
+      "SkiaSharp.NativeAssets.Win32/2.88.6": {
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.Desktop.Common/2.88.6": {
+        "dependencies": {
+          "SkiaSharp": "2.88.6",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SkiaSharp.Views.Desktop.Common.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.WPF/2.88.6": {
+        "dependencies": {
+          "SkiaSharp": "2.88.6",
+          "SkiaSharp.Views.Desktop.Common": "2.88.6"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SkiaSharp.Views.WPF.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
+          }
+        }
+      },
+      "Syncfusion.Compression.Base/25.1.39": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Syncfusion.Compression.Base.dll": {
+            "assemblyVersion": "25.1.39.0",
+            "fileVersion": "25.1.39.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/25.1.39": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "25.1.39.0",
+            "fileVersion": "25.1.39.0"
+          }
+        }
+      },
+      "Syncfusion.XlsIO.Wpf/25.1.39": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "25.1.39",
+          "Syncfusion.Licensing": "25.1.39"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Syncfusion.XlsIO.Base.dll": {
+            "assemblyVersion": "25.1.39.0",
+            "fileVersion": "25.1.39.0"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.Configuration.ConfigurationManager/6.0.1": {
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "6.0.0",
+          "System.Security.Permissions": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.922.41905"
+          }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/6.0.1": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1523.11507"
+          }
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        }
+      },
+      "System.Formats.Asn1/5.0.0": {},
+      "System.IdentityModel.Tokens.Jwt/6.24.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "6.24.0",
+          "Microsoft.IdentityModel.Tokens": "6.24.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "6.24.0.0",
+            "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "System.IO.FileSystem.AccessControl/5.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "6.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "System.IO.Packaging/4.7.0": {},
+      "System.Memory/4.5.4": {},
+      "System.Memory.Data/1.0.2": {
+        "dependencies": {
+          "System.Text.Encodings.Web": "6.0.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.221.20802"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {},
+      "System.Private.Uri/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "runtime.any.System.Runtime": "4.3.0"
+        }
+      },
+      "System.Runtime.Caching/6.0.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "6.0.1"
+        },
+        "runtime": {
+          "runtimes/win/lib/net6.0/System.Runtime.Caching.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "System.Security.AccessControl/6.0.0": {},
+      "System.Security.Cryptography.Cng/5.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "5.0.0"
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/6.0.0": {},
+      "System.Security.Permissions/6.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "6.0.0",
+          "System.Windows.Extensions": "6.0.0"
+        }
+      },
+      "System.Security.Principal.Windows/5.0.0": {},
+      "System.Text.Encoding/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Text.Encoding": "4.3.0"
+        }
+      },
+      "System.Text.Encoding.CodePages/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
+      "System.Text.Encodings.Web/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
+      "System.Text.Json/4.7.2": {},
+      "System.Threading.Tasks.Extensions/4.5.4": {},
+      "System.Windows.Extensions/6.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        }
+      },
+      "ArcGisPlannerToolbox.Core/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.28",
+          "Dapper.SimpleCRUD": "2.3.0",
+          "Microsoft.Data.SqlClient": "5.1.4",
+          "Npgsql": "6.0.11",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "ArcGisPlannerToolbox.Core.dll": {}
+        }
+      },
+      "ArcGIS.Core/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Core.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Catalog/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Catalog.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Catalog.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Core/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Core.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Core.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.DataGrid.Contrib.Wpf/20.1.1.0": {
+        "runtime": {
+          "ArcGIS.Desktop.DataGrid.Contrib.Wpf.dll": {
+            "assemblyVersion": "20.1.1.0",
+            "fileVersion": "20.1.1.0"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Editing/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Editing.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Editing.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Editors.Wpf/23.1.2.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Editors.Wpf.dll": {
+            "assemblyVersion": "23.1.2.0",
+            "fileVersion": "23.1.2.0"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Editors.Wpf.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Extensions/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Extensions.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.0.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Extensions.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Framework/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Framework.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Framework.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.GeoProcessing/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.GeoProcessing.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.GeoProcessing.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Layouts/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Layouts.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Layouts.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Mapping/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Mapping.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Mapping.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Resources/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Resources.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.0.49743"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Ribbon.Wpf/23.1.2.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Ribbon.Wpf.dll": {
+            "assemblyVersion": "23.1.2.0",
+            "fileVersion": "23.1.2.0"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Ribbon.Wpf.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Shared.Wpf/23.1.2.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Shared.Wpf.dll": {
+            "assemblyVersion": "23.1.2.0",
+            "fileVersion": "23.1.2.0"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Shared.Wpf.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ESRI.ArcGIS.ItemIndex/13.2.0.0": {
+        "runtime": {
+          "ESRI.ArcGIS.ItemIndex.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.0.49743"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.0.0": {
+        "runtime": {
+          "Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Editing.PushPull/13.2.0.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Editing.PushPull.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.2.49743"
+          }
+        }
+      },
+      "C1.WPF.Grid/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.Grid.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.WPF.GridControl/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.GridControl.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.WPF.Core/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.Core.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.DataCollection/1.0.20222.106": {
+        "runtime": {
+          "C1.DataCollection.dll": {
+            "assemblyVersion": "1.0.20222.106",
+            "fileVersion": "1.0.20222.106"
+          }
+        }
+      },
+      "C1.WPF.DataCollection/1.0.20222.106": {
+        "runtime": {
+          "C1.WPF.DataCollection.dll": {
+            "assemblyVersion": "1.0.20222.106",
+            "fileVersion": "1.0.20222.106"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Docking.Wpf/23.1.2.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Docking.Wpf.dll": {
+            "assemblyVersion": "23.1.2.0",
+            "fileVersion": "23.1.2.0"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Docking.Wpf.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "ArcGIS.Desktop.SyntaxEditor.Wpf/23.1.2.0": {
+        "runtime": {
+          "ArcGIS.Desktop.SyntaxEditor.Wpf.dll": {
+            "assemblyVersion": "23.1.2.0",
+            "fileVersion": "23.1.2.0"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.SyntaxEditor.Wpf.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Lucene.Net/4.0.0.0": {
+        "runtime": {
+          "Lucene.Net.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Lucene.Net.QueryParser/4.0.0.0": {
+        "runtime": {
+          "Lucene.Net.QueryParser.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Lucene.Net.Analysis.Common/4.0.0.0": {
+        "runtime": {
+          "Lucene.Net.Analysis.Common.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "ArcGIS.Desktop.Text.Wpf/23.1.2.0": {
+        "runtime": {
+          "ArcGIS.Desktop.Text.Wpf.dll": {
+            "assemblyVersion": "23.1.2.0",
+            "fileVersion": "23.1.2.0"
+          }
+        },
+        "resources": {
+          "de/ArcGIS.Desktop.Text.Wpf.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "C1.WPF.Input/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.Input.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.WPF.Menu/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.Menu.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.WPF.DataFilter/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.DataFilter.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.WPF.DateTimeEditors/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.DateTimeEditors.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.WPF.Accordion/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.Accordion.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.DataCollection.BindingList/1.0.20222.106": {
+        "runtime": {
+          "C1.DataCollection.BindingList.dll": {
+            "assemblyVersion": "1.0.20222.106",
+            "fileVersion": "1.0.20222.106"
+          }
+        }
+      },
+      "J2N/2.0.0.0": {
+        "runtime": {
+          "J2N.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "C1.WPF.ListView/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.ListView.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      },
+      "C1.WPF.TreeView/6.0.20222.263": {
+        "runtime": {
+          "C1.WPF.TreeView.dll": {
+            "assemblyVersion": "6.0.20222.263",
+            "fileVersion": "6.0.20222.263"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ArcGisPlannerToolbox.WPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Autofac/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XCXmpxhOnuztTTRkzG+8B8KU8SR8WjBYwSntndjlsFR5lM3K/g43r9hUwewIPDBJwDrmZU3TjmNdH6s8IF3VFQ==",
+      "path": "autofac/7.1.0",
+      "hashPath": "autofac.7.1.0.nupkg.sha512"
+    },
+    "Azure.Core/1.35.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
+      "path": "azure.core/1.35.0",
+      "hashPath": "azure.core.1.35.0.nupkg.sha512"
+    },
+    "Azure.Identity/1.10.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l1Xm2MWOF2Mzcwuarlw8kWQXLZk3UeB55aQXVyjj23aBfDwOZ3gu5GP2kJ6KlmZeZv2TCzw7x4L3V36iNr3gww==",
+      "path": "azure.identity/1.10.3",
+      "hashPath": "azure.identity.1.10.3.nupkg.sha512"
+    },
+    "ClosedXML/0.96.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3VLfl4wCMHDuaV0GwA9MHY6BvKlTH4zaNG/ah6QODCZYMqLS6m0JVZph5kGpbuCCCyKXdO2hiUd/e35Wzd/Zmw==",
+      "path": "closedxml/0.96.0",
+      "hashPath": "closedxml.0.96.0.nupkg.sha512"
+    },
+    "CommunityToolkit.Mvvm/8.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r0g0k9tGYdrnz8R7T3x5UiokDffeevzK/2P/9SBL6fqLgN8B157MIi/bVUWI1KAz6ZorZrK9AdABCWUeXZZsvA==",
+      "path": "communitytoolkit.mvvm/8.2.2",
+      "hashPath": "communitytoolkit.mvvm.8.2.2.nupkg.sha512"
+    },
+    "Dapper/2.1.28": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ha49pzOEDmCPkMxwfPSR/wxa/6RD3r42TESIgpzpi7FXq/gNVUuJVEO+wtUzntNRhtmq3BKCl0s0aAlSZLkBUA==",
+      "path": "dapper/2.1.28",
+      "hashPath": "dapper.2.1.28.nupkg.sha512"
+    },
+    "Dapper.SimpleCRUD/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9wj9b3IYADmNea3hwlkS0qKRCcbTYcJ4uYCdZdE9O34nTvl0mJv1Hy6sSFA5t/UN8zKscWiDFWT8B+4tOnoQvA==",
+      "path": "dapper.simplecrud/2.3.0",
+      "hashPath": "dapper.simplecrud.2.3.0.nupkg.sha512"
+    },
+    "DocumentFormat.OpenXml/2.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RhpnDgyyx1KjZm98T3w3bSXFHG/7ZNUaVmz4NAUA+jmV3PcVNZeW87Y04CpBNLdDHEMSspirfo0B5kLRaoE97w==",
+      "path": "documentformat.openxml/2.16.0",
+      "hashPath": "documentformat.openxml.2.16.0.nupkg.sha512"
+    },
+    "ExcelDataReader/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eXyxTwG7EEWpgQX3juZ2KcndqTqm/ydx9GXS2lUiMJU54U4h5eXdygRtVgINv0t60ezPWEb+lL7uM7Q+wm5BBA==",
+      "path": "exceldatareader/3.6.0",
+      "hashPath": "exceldatareader.3.6.0.nupkg.sha512"
+    },
+    "ExcelDataReader.DataSet/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-miW3sWmPXnLM38YadRIfnhL4W4QZajpS6Q/OqsOpFJU5ct8h+M/fMpbGMm5INtsMP0Y1k0WK0stIfSW3RP31Xg==",
+      "path": "exceldatareader.dataset/3.6.0",
+      "hashPath": "exceldatareader.dataset.3.6.0.nupkg.sha512"
+    },
+    "ExcelNumberFormat/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R3BVHPs9O+RkExbZYTGT0+9HLbi8ZrNij1Yziyw6znd3J7P3uoIR07uwTLGOogtz1p6+0sna66eBoXu7tBiVQA==",
+      "path": "excelnumberformat/1.1.0",
+      "hashPath": "excelnumberformat.1.1.0.nupkg.sha512"
+    },
+    "HarfBuzzSharp/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OrQLaxtZMIeS2yHSUtsKzeSdk9CPaCpyJ/JCs+wLfRGatjE8MLUS6LGj6vdbGRxqRavcXs79C9O3oWe6FJR0JQ==",
+      "path": "harfbuzzsharp/7.3.0",
+      "hashPath": "harfbuzzsharp.7.3.0.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LWcFJ39j+dN0KK8c/GJJZPPZPL9TqT2FA42/LRGqzUMmSm5LYbINOMnPvUr7RuLR6RFSmKIrgrlgObR8G5ho2A==",
+      "path": "harfbuzzsharp.nativeassets.macos/7.3.0",
+      "hashPath": "harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ulEewLMk+dNmbmpy15ny/YusI6JNUWqchF080TV2jgfFBXPXjWm767JleDi/S7hp8eDeEN6GYIIxpvNr5fLvIw==",
+      "path": "harfbuzzsharp.nativeassets.win32/7.3.0",
+      "hashPath": "harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512"
+    },
+    "LiveChartsCore/2.0.0-rc2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X55dG3oI3AVOGWUrly+J/bUJGmb/pmB2aTkaWJPyIXI2cr5cqPJG/6GLL17IJ8e3GOofFWgQCbg0Az0+myUQLg==",
+      "path": "livechartscore/2.0.0-rc2",
+      "hashPath": "livechartscore.2.0.0-rc2.nupkg.sha512"
+    },
+    "LiveChartsCore.SkiaSharpView/2.0.0-rc2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UVvUa7QAlyiPLuCjcoMKr4dI1FIUE5xW/XjcioSXgsOoqZg0E6Fq3B9k5t6MjIVE6dUU2F3tZwdm5KDiNftQ2A==",
+      "path": "livechartscore.skiasharpview/2.0.0-rc2",
+      "hashPath": "livechartscore.skiasharpview.2.0.0-rc2.nupkg.sha512"
+    },
+    "LiveChartsCore.SkiaSharpView.WPF/2.0.0-rc2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FUpPKrCySv3oP/eilTN7ncHKGgacRwh2MK0CHzMEEAZ+77qaYJ9e0aU+k9ARfegxwmbFvjfKOWGpfFJOq+ugMw==",
+      "path": "livechartscore.skiasharpview.wpf/2.0.0-rc2",
+      "hashPath": "livechartscore.skiasharpview.wpf.2.0.0-rc2.nupkg.sha512"
+    },
+    "MaterialDesignColors/2.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C4Oy+qkjMoMPoZKyqYdCnIYtK8c0OSIHmNP73Vgc69NjiUG093xTkE7W/Ks54cTDS7fmWOtUHfwISTVTtb/YKg==",
+      "path": "materialdesigncolors/2.1.4",
+      "hashPath": "materialdesigncolors.2.1.4.nupkg.sha512"
+    },
+    "MaterialDesignThemes/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bp9Auw70j+9V7WsUMT4pc8ulVzfL0Eav/tyGgICDirxxhKJwhqtC/6PRkTUm+R1t9611xiDuk5pSUNdDV6vfOQ==",
+      "path": "materialdesignthemes/4.9.0",
+      "hashPath": "materialdesignthemes.4.9.0.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.1",
+      "hashPath": "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.Data.SqlClient/5.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RSGSodusrPSVPKBLETRTH51G0yUQS28rD1hi2svTKS1GOsvUWxUpE8hgnKnUFC9RNjzfQmfUp+T0lJHFtlT3HQ==",
+      "path": "microsoft.data.sqlclient/5.1.4",
+      "hashPath": "microsoft.data.sqlclient.5.1.4.nupkg.sha512"
+    },
+    "Microsoft.Data.SqlClient.SNI.runtime/5.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wNGM5ZTQCa2blc9ikXQouybGiyMd6IHPVJvAlBEPtr6JepZEOYeDxGyprYvFVeOxlCXs7avridZQ0nYkHzQWCQ==",
+      "path": "microsoft.data.sqlclient.sni.runtime/5.1.1",
+      "hashPath": "microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512"
+    },
+    "Microsoft.Identity.Client/4.56.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rr4zbidvHy9r4NvOAs5hdd964Ao2A0pAeFBJKR95u1CJAVzbd1p6tPTXUZ+5ld0cfThiVSGvz6UHwY6JjraTpA==",
+      "path": "microsoft.identity.client/4.56.0",
+      "hashPath": "microsoft.identity.client.4.56.0.nupkg.sha512"
+    },
+    "Microsoft.Identity.Client.Extensions.Msal/4.56.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H12YAzEGK55vZ+QpxUzozhW8ZZtgPDuWvgA0JbdIR9UhMUplj29JhIgE2imuH8W2Nw9D8JKygR1uxRFtpSNcrg==",
+      "path": "microsoft.identity.client.extensions.msal/4.56.0",
+      "hashPath": "microsoft.identity.client.extensions.msal.4.56.0.nupkg.sha512"
+    },
+    "Microsoft.Identity.Client.NativeInterop/0.13.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eccVwaDOan12YJrh6ntIBIXeKTNoWz+af2/c13lhvrDoX0ydVXitCXMJVz0dh2eJK5y2KJ7IfkEvNilB/A9V7A==",
+      "path": "microsoft.identity.client.nativeinterop/0.13.8",
+      "hashPath": "microsoft.identity.client.nativeinterop.0.13.8.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Abstractions/6.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X6aBK56Ot15qKyG7X37KsPnrwah+Ka55NJWPppWVTDi8xWq7CJgeNw2XyaeHgE1o/mW4THwoabZkBbeG2TPBiw==",
+      "path": "microsoft.identitymodel.abstractions/6.24.0",
+      "hashPath": "microsoft.identitymodel.abstractions.6.24.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/6.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XDWrkThcxfuWp79AvAtg5f+uRS1BxkIbJnsG/e8VPzOWkYYuDg33emLjp5EWcwXYYIDsHnVZD/00kM/PYFQc/g==",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.24.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.6.24.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Logging/6.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qLYWDOowM/zghmYKXw1yfYKlHOdS41i8t4hVXr9bSI90zHqhyhQh9GwVy8pENzs5wHeytU23DymluC9NtgYv7w==",
+      "path": "microsoft.identitymodel.logging/6.24.0",
+      "hashPath": "microsoft.identitymodel.logging.6.24.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols/6.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+NzKCkvsQ8X1r/Ff74V7CFr9OsdMRaB6DsV+qpH7NNLdYJ8O4qHbmTnNEsjFcDmk/gVNDwhoL2gN5pkPVq0lwQ==",
+      "path": "microsoft.identitymodel.protocols/6.24.0",
+      "hashPath": "microsoft.identitymodel.protocols.6.24.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a/2RRrc8C9qaw8qdD9hv1ES9YKFgxaqr/SnwMSLbwQZJSUQDd4qx1K4EYgWaQWs73R+VXLyKSxN0f/uE9CsBiQ==",
+      "path": "microsoft.identitymodel.protocols.openidconnect/6.24.0",
+      "hashPath": "microsoft.identitymodel.protocols.openidconnect.6.24.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Tokens/6.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZPqHi86UYuqJXJ7bLnlEctHKkPKT4lGUFbotoCNiXNCSL02emYlcxzGYsRGWWmbFEcYDMi2dcTLLYNzHqWOTsw==",
+      "path": "microsoft.identitymodel.tokens/6.24.0",
+      "hashPath": "microsoft.identitymodel.tokens.6.24.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.SqlServer.Server/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
+      "path": "microsoft.sqlserver.server/1.0.0",
+      "hashPath": "microsoft.sqlserver.server.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.Web.WebView2/1.0.864.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V1qyLRiAZ31qmOOCFCjoONgaUfvJRiTHWcJWkT3V7pluM2+P6QAgqmbE4UX7Gt4sh6eN34wqM30OnTZ6HXI/sw==",
+      "path": "microsoft.web.webview2/1.0.864.35",
+      "hashPath": "microsoft.web.webview2.1.0.864.35.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+      "path": "microsoft.win32.systemevents/6.0.0",
+      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    },
+    "Npgsql/6.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZPpjFpW0m71pqAMIpUdVZUY74TCTqCXrytbFsMvm8IuAadpfV9K1lwphuyDBKCsc3w1i7TH+aevHQ6TZ+b0ZMw==",
+      "path": "npgsql/6.0.11",
+      "hashPath": "npgsql.6.0.11.nupkg.sha512"
+    },
+    "runtime.any.System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fRS7zJgaG9NkifaAxGGclDDoRn9HC7hXACl52Or06a/fxdzDajWb5wov3c6a+gVSlekRoexfjwQSK9sh5um5LQ==",
+      "path": "runtime.any.system.runtime/4.3.0",
+      "hashPath": "runtime.any.system.runtime.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Text.Encoding/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+ihI5VaXFCMVPJNstG4O4eo1CfbrByLxRrQQTqOTp1ttK0kUKDqOdBSTaCB2IBk/QtjDrs6+x4xuezyMXdm0HQ==",
+      "path": "runtime.any.system.text.encoding/4.3.0",
+      "hashPath": "runtime.any.system.text.encoding.4.3.0.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wdfeBAQrEQCbJIRgAiargzP1Uy+0grZiG4CSgBnhAgcJTsPzlifIaO73JRdwIlT3TyBoeU9jEqzwFUhl4hTYnQ==",
+      "path": "skiasharp/2.88.6",
+      "hashPath": "skiasharp.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.HarfBuzz/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s5yZTHdqbXKiTL06ns6zW3asELfX60dEceA4ZdYmNlOkz/OyWDfdjHAuu4HGDA7Mxx5iaUEzDZgPkEe+OVr/jg==",
+      "path": "skiasharp.harfbuzz/2.88.6",
+      "hashPath": "skiasharp.harfbuzz.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Sko9LFxRXSjb3OGh5/RxrVRXxYo48tr5NKuuSy6jB85GrYt8WRqVY1iLOLwtjPiVAt4cp+pyD4i30azanS64dw==",
+      "path": "skiasharp.nativeassets.macos/2.88.6",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7TzFO0u/g2MpQsTty4fyCDdMcfcWI+aLswwfnYXr3gtNS6VLKdMXPMeKpJa3pJSLnUBN6wD0JjuCe8OoLBQ6cQ==",
+      "path": "skiasharp.nativeassets.win32/2.88.6",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.Views.Desktop.Common/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ectb9s9+xH8zh82UbagYX4l6bdR1PcWz7xmaVzcyBcmVhrDmty61U0vIlXgthZH0wJ9fmFX3X+71OwrA9c9adw==",
+      "path": "skiasharp.views.desktop.common/2.88.6",
+      "hashPath": "skiasharp.views.desktop.common.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.Views.WPF/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JQFZ8BeEg7Lv4uMMbgGnbq7GLi9w63mvL+tzkMzFYmXBEDuFibubWPQmYwOkEo5dlWee0Wn7K1SBhMb8EMFROg==",
+      "path": "skiasharp.views.wpf/2.88.6",
+      "hashPath": "skiasharp.views.wpf.2.88.6.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Base/25.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-571a57cQ+/B44/+ulZUSyKhgDF0uwU3KNh2IIQaiByWZgFZ0G3NHfeINe77xwtTi8OcNzYV5hiJu6Lu2y1WRpg==",
+      "path": "syncfusion.compression.base/25.1.39",
+      "hashPath": "syncfusion.compression.base.25.1.39.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/25.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i8krFQ2ElmL27dOwoPwwi8BZBX9hxaVgXVeVQZMvHp/U5k9Pn0UDp7/edzDkLmsIQFZHXx1J56VxR+4T+UKarA==",
+      "path": "syncfusion.licensing/25.1.39",
+      "hashPath": "syncfusion.licensing.25.1.39.nupkg.sha512"
+    },
+    "Syncfusion.XlsIO.Wpf/25.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tDmSEw1Fl0GRI2Eqqk4WyhgflN3hIO8r0we5f9YTQ7OVWmZkVrsI11yssq3GWaV0ESMc9vaIxD9THDSg7t7zGw==",
+      "path": "syncfusion.xlsio.wpf/25.1.39",
+      "hashPath": "syncfusion.xlsio.wpf.25.1.39.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==",
+      "path": "system.configuration.configurationmanager/6.0.1",
+      "hashPath": "system.configuration.configurationmanager.6.0.1.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
+      "path": "system.diagnostics.diagnosticsource/6.0.1",
+      "hashPath": "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "path": "system.drawing.common/6.0.0",
+      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    },
+    "System.Formats.Asn1/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MTvUIktmemNB+El0Fgw9egyqT9AYSIk6DTJeoDSpc3GIHxHCMo8COqkWT1mptX5tZ1SlQ6HJZ0OsSvMth1c12w==",
+      "path": "system.formats.asn1/5.0.0",
+      "hashPath": "system.formats.asn1.5.0.0.nupkg.sha512"
+    },
+    "System.IdentityModel.Tokens.Jwt/6.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qibsj9MPWq8S/C0FgvmsLfIlHLE7ay0MJIaAmK94ivN3VyDdglqReed5qMvdQhSL0BzK6v0Z1wB/sD88zVu6Jw==",
+      "path": "system.identitymodel.tokens.jwt/6.24.0",
+      "hashPath": "system.identitymodel.tokens.jwt.6.24.0.nupkg.sha512"
+    },
+    "System.IO.FileSystem.AccessControl/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==",
+      "path": "system.io.filesystem.accesscontrol/5.0.0",
+      "hashPath": "system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512"
+    },
+    "System.IO.Packaging/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9VV4KAbgRQZ79iEoG40KIeZy38O30oWwewScAST879+oki8g/Wa2HXZQgrhDDxQM4GkP1PnRJll05NMiVPbYAw==",
+      "path": "system.io.packaging/4.7.0",
+      "hashPath": "system.io.packaging.4.7.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
+    "System.Memory.Data/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==",
+      "path": "system.memory.data/1.0.2",
+      "hashPath": "system.memory.data.1.0.2.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.Private.Uri/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I4SwANiUGho1esj4V4oSlPllXjzCZDE+5XXso2P03LW2vOda2Enzh8DWOxwN6hnrJyp314c7KuVu31QYhRzOGg==",
+      "path": "system.private.uri/4.3.0",
+      "hashPath": "system.private.uri.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime.Caching/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E0e03kUp5X2k+UAoVl6efmI7uU7JRBWi5EIdlQ7cr0NpBGjHG4fWII35PgsBY9T4fJQ8E4QPsL0rKksU9gcL5A==",
+      "path": "system.runtime.caching/6.0.0",
+      "hashPath": "system.runtime.caching.6.0.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AUADIc0LIEQe7MzC+I0cl0rAT8RrTAKFHl53yHjEUzNVIaUlhFY11vc2ebiVJzVBuOzun6F7FBA+8KAbGTTedQ==",
+      "path": "system.security.accesscontrol/6.0.0",
+      "hashPath": "system.security.accesscontrol.6.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Cng/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jIMXsKn94T9JY7PvPq/tMfqa6GAaHpElRDpmG+SuL+D3+sTw2M8VhnibKnN8Tq+4JqbPJ/f+BwtLeDMEnzAvRg==",
+      "path": "system.security.cryptography.cng/5.0.0",
+      "hashPath": "system.security.cryptography.cng.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==",
+      "path": "system.security.cryptography.protecteddata/6.0.0",
+      "hashPath": "system.security.cryptography.protecteddata.6.0.0.nupkg.sha512"
+    },
+    "System.Security.Permissions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==",
+      "path": "system.security.permissions/6.0.0",
+      "hashPath": "system.security.permissions.6.0.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
+      "path": "system.security.principal.windows/5.0.0",
+      "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
+      "path": "system.text.encoding/4.3.0",
+      "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==",
+      "path": "system.text.encoding.codepages/6.0.0",
+      "hashPath": "system.text.encoding.codepages.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==",
+      "path": "system.text.encodings.web/6.0.0",
+      "hashPath": "system.text.encodings.web.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "path": "system.text.json/4.7.2",
+      "hashPath": "system.text.json.4.7.2.nupkg.sha512"
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "System.Windows.Extensions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
+      "path": "system.windows.extensions/6.0.0",
+      "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "ArcGisPlannerToolbox.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Core/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Catalog/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Core/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.DataGrid.Contrib.Wpf/20.1.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Editing/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Editors.Wpf/23.1.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Extensions/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Framework/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.GeoProcessing/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Layouts/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Mapping/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Resources/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Ribbon.Wpf/23.1.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Shared.Wpf/23.1.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ESRI.ArcGIS.ItemIndex/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json/13.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Editing.PushPull/13.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.Grid/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.GridControl/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.Core/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.DataCollection/1.0.20222.106": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.DataCollection/1.0.20222.106": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Docking.Wpf/23.1.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.SyntaxEditor.Wpf/23.1.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lucene.Net/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lucene.Net.QueryParser/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lucene.Net.Analysis.Common/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcGIS.Desktop.Text.Wpf/23.1.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.Input/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.Menu/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.DataFilter/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.DateTimeEditors/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.Accordion/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.DataCollection.BindingList/1.0.20222.106": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "J2N/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.ListView/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C1.WPF.TreeView/6.0.20222.263": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
